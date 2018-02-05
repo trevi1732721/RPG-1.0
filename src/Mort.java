@@ -6,5 +6,13 @@ public class Mort extends Sorts{
         coût = 10;
         nom = "Mort subite";
     }
-    public void lancerSorts(){}
+    public void lancerSorts(Mage attaque, Personnages blessé){
+        if(attaque.getPtSorts()>=10){
+            attaque.setPtSorts(attaque.getPtSorts()-coût);
+            int random = (int)(Math.random()*10);
+        if(random==1){
+            blessé.setNbVie(0);
+        }
+        }
+    }
 }

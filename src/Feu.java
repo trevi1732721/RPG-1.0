@@ -7,6 +7,10 @@ public class Feu extends Sorts{
         nom = "Boule de Feu";
     }
 
-    public void lancerSorts(Personnages attaque, Personnages blessé){
+    public void lancerSorts(Mage attaque, Personnages blessé){
+        if(attaque.getPtSorts()>=5){
+            attaque.setPtSorts(attaque.getPtSorts()-coût);
+            blessé.setNbVie(blessé.getNbVie()-5);
+        }
     }
 }

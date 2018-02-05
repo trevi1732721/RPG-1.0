@@ -6,5 +6,10 @@ public class Glace extends Sorts {
         coût = 5;
         nom = "Pic de Glace";
     }
-    public void lancerSorts(){}
+    public void lancerSorts(Mage attaque, Personnages blessé){
+        if(attaque.getPtSorts()>=5){
+            attaque.setPtSorts(attaque.getPtSorts()-coût);
+            blessé.setNbVie(blessé.getNbVie()-(7-blessé.getNbDeff()));
+        }
+    }
 }

@@ -5,8 +5,17 @@ public abstract class Mage extends Personnages {
     protected int ptSorts, nbDeff = 1, nbVie = 60, random;
     protected Sorts[]listeSorts = new Sorts[2];
 
+    public int getPtSorts() {
+        return ptSorts;
+    }
+
+    public void setPtSorts(int ptSorts) {
+        this.ptSorts = ptSorts;
+    }
+
     public void attaque(Personnages perso){
         random= (int) Math.random();
         listeSorts[random].lancerSorts();
+
     }
 }
