@@ -8,6 +8,5 @@ public class Feu extends Sorts{
     }
 
     public void lancerSorts(Personnages attaque, Personnages blessé){
-        if(attaque.)
     }
 }
