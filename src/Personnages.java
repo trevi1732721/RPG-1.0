@@ -5,7 +5,21 @@ public abstract class Personnages {
     protected int nbVie;
     protected int nbDeff;
     protected String nom;
-    public abstract void attaque();
+
+    public void setNbDeff(int nbDeff) {
+        this.nbDeff = nbDeff;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setNbVie(int nbVie) {
+
+        this.nbVie = nbVie;
+    }
+
+    public abstract void attaque(Personnages perso);
 
     public int getNbVie() {
         return nbVie;
