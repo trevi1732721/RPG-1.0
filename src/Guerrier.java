@@ -4,15 +4,15 @@
 public abstract class Guerrier extends Personnages {
     protected int nbForce;
 
-    public void attaque(Personnages perso, Personnages attaquer){
-        perso.setNbVie(perso.getNbVie()-(nbForce*2-perso.getNbDeff()));
-        if(perso instanceof Paladin){
+    public void attaque( Personnages attaquer){
+        attaquer.setNbVie(attaquer.getNbVie()-(nbForce*2-attaquer.getNbDeff()));
+        if(attaquer instanceof Paladin){
             System.out.println("Le Paladin attaque... ");
-        }if(perso instanceof Barbare){
+        }if(attaquer instanceof Barbare){
             System.out.println("Le Barbare attaque... ");
-        }if(perso instanceof MageNoir){
+        }if(attaquer instanceof MageNoir){
             System.out.println("Le mage noir attaque... ");
-        }if(perso instanceof MageRouge){
+        }if(attaquer instanceof MageRouge){
             System.out.println("Le mage rouge attaque... ");
         }
     }
