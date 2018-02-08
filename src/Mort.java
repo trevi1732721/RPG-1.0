@@ -10,9 +10,9 @@ public class Mort extends Sorts{
         if(attaque.getPtSorts()>=10){
             attaque.setPtSorts(attaque.getPtSorts()-coût);
             int random = (int)(Math.random()*10);
+            System.out.print("IL lance le sort Empoisonnement !");
         if(random==1){
             blessé.setNbVie(0);
-            System.out.print("IL lance le sort Empoisonnement !");
             if(blessé instanceof Paladin){
                 System.out.println("Le Paladin meurt... ");
             }if(blessé instanceof Barbare){
@@ -22,6 +22,8 @@ public class Mort extends Sorts{
             }if(blessé instanceof MageRouge){
                 System.out.println("Le mage rouge meurt ... ");
             }
+        }else {
+            System.out.println("Il ne se passe rien...");
         }
         }
     }
