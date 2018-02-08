@@ -16,12 +16,12 @@ public class Main {
         while(!mort){
             perso[0].attaque(perso[1]);
             fin = vérifier(perso[0],perso[1]);
-            if(fin!= 1 ||fin!= 2 ){
+            if(fin == 1 ||fin == 2 ){
                 mort=true;
             }
             perso[1].attaque(perso[0]);
             fin = vérifier(perso[1],perso[0]);
-            if(fin!= 1 ||fin!= 2 ){
+            if(fin == 1 ||fin == 2 ){
                 mort=true;
             }
         }

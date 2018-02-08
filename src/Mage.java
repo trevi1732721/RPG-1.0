@@ -14,7 +14,7 @@ public abstract class Mage extends Personnages {
     }
 
     public void attaque( Personnages attaquer){
-        random= (int) (Math.random()*3)-1;
+        random= (int) (Math.random()*2);
         listeSorts[random].lancerSorts(this ,attaquer);
 
     }
