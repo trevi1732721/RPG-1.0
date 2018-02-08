@@ -5,5 +5,5 @@ public class Sorts {
     protected String nom;
     protected int coût;
 
-    public void lancerSorts(){};
+    public void lancerSorts(Personnages perso, Personnages attaquer){};
 }

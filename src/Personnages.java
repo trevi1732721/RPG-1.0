@@ -19,7 +19,7 @@ public abstract class Personnages {
         this.nbVie = nbVie;
     }
 
-    public abstract void attaque(Personnages perso);
+    public abstract void attaque(Personnages perso, Personnages attaquer);
 
     public int getNbVie() {
         return nbVie;
