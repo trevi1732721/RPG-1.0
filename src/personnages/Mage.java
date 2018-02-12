@@ -1,4 +1,5 @@
 package personnages;
+import armes.Armes;
 import armes.Magique;
 import sorts.*;
 
@@ -8,10 +9,9 @@ import sorts.*;
 public abstract class Mage extends Personnages {
     protected int ptSorts, nbDeff = 1, nbVie = 60, random;
     protected Sorts[]listeSorts = new Sorts[2];
-    protected Magique arme;
 
     public Magique getArme() {
-        return arme;
+        return (Magique)arme;
     }
 
     public int getPtSorts() {

@@ -1,3 +1,4 @@
+import armes.*;
 import personnages.*;
 
 import java.util.Scanner;
@@ -11,9 +12,17 @@ public class Main {
         Personnages[] perso = new Personnages[2];
         boolean mort= false;
         int attaque=0, fin=0;
+        Scanner sc = new Scanner(System.in);
         //choix
+
         perso[0] = choix(1);
+        System.out.println("quel est le nom du joueur 1\n");
+        perso[0].setNom(sc.next());
+        perso[0].setArme(choixArme(perso[0]));
         perso[1] = choix(2);
+        System.out.println("quel est le nom du joueur 2\n");
+        perso[1].setNom(sc.next());
+        perso[1].setArme(choixArme(perso[1]));
         //combat
         while(!mort){
             perso[0].attaque(perso[1]);
@@ -38,10 +47,10 @@ public class Main {
         boolean choix2 = true;
         choix2 = false;
         System.out.print("Quelle est la classe du joueur " + joueur + "?\n" +
-                "1- personnages.Barbare\n" +
-                "2- personnages.Paladin\n" +
-                "3- personnages.Mage noir\n" +
-                "4- personnages.Mage Rouge");
+                "1- Barbare\n" +
+                "2- Paladin\n" +
+                "3- Mage noir\n" +
+                "4- Mage Rouge");
         Scanner sc = new Scanner(System.in);
         choix = sc.nextInt();
         switch (choix) {
@@ -55,6 +64,7 @@ public class Main {
                 return new MageRouge();
             default: return new Barbare();
         }
+
     }
     public static int vérifier(Personnages one,Personnages two){
         if(one.getNbVie()<=0){
@@ -70,5 +80,61 @@ public class Main {
             return 0;
         }
     }
+    public static Armes choixArme(Personnages joueur){
+        int choix;
+        boolean choix2 = true;
+        choix2 = false;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Quelle est l'arme de " + joueur.getNom() + "?\n");
+        if(joueur instanceof Contondant){
+            System.out.println("1- Masse\n2- Épée Lopurde\n3- Sceptre\n4- Masamune\n");
+
+            choix = sc.nextInt();
+            switch (choix) {
+                case 1:
+                    return new Masse();
+                case 2:
+                    return new ÉpéeLourde();
+                case 3:
+                    return new Sceptre();
+                case 4:
+                    return new Masamune();
+                default:
+                    return new Masamune();
+        }
+        }else if(joueur instanceof Tranchante){
+                System.out.println("1- Épée\n2- Épée Lopurde\n3- Épée Magique\n4- Masamune\n");
+                choix = sc.nextInt();
+                switch (choix) {
+                    case 1:
+                        return new Épée();
+                    case 2:
+                        return new ÉpéeLourde();
+                    case 3:
+                        return new ÉpéeMagique();
+                    case 4:
+                        return new Masamune();
+                    default:
+                        return new Masamune();
+                }
+
+    }else{System.out.println("1- Baguette\n2- Sceptre\n3- Épée Magique\n4- Masamune\n");
+        choix = sc.nextInt();
+        switch (choix) {
+        case 1:
+        return new Baguette();
+        case 2:
+        return new Sceptre();
+        case 3:
+        return new ÉpéeMagique();
+        case 4:
+        return new Masamune();
+default:
+        return new Masamune();
+        }
+
+        }
+
+        }
 }
 
