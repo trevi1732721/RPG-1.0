@@ -1,3 +1,5 @@
+import personnages.*;
+
 import java.util.Scanner;
 
 /**
@@ -36,10 +38,10 @@ public class Main {
         boolean choix2 = true;
         choix2 = false;
         System.out.print("Quelle est la classe du joueur " + joueur + "?\n" +
-                "1- Barbare\n" +
-                "2- Paladin\n" +
-                "3- Mage noir\n" +
-                "4- Mage Rouge");
+                "1- personnages.Barbare\n" +
+                "2- personnages.Paladin\n" +
+                "3- personnages.Mage noir\n" +
+                "4- personnages.Mage Rouge");
         Scanner sc = new Scanner(System.in);
         choix = sc.nextInt();
         switch (choix) {
