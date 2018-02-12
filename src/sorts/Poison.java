@@ -13,7 +13,7 @@ public class Poison extends Sorts {
     }
     public void lancerSorts(Mage attaque, Personnages blessé){
         if(attaque.getPtSorts()>=2){
-            repetition = repetition+2;
+            repetition = repetition+2+attaque.getArme().magie();
             attaque.setPtSorts(attaque.getPtSorts()-coût);
             blessé.setNbVie(blessé.getNbVie()-(repetition));
         }

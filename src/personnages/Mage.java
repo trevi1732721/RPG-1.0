@@ -1,4 +1,5 @@
 package personnages;
+import armes.Magique;
 import sorts.*;
 
 /**
@@ -7,6 +8,11 @@ import sorts.*;
 public abstract class Mage extends Personnages {
     protected int ptSorts, nbDeff = 1, nbVie = 60, random;
     protected Sorts[]listeSorts = new Sorts[2];
+    protected Magique arme;
+
+    public Magique getArme() {
+        return arme;
+    }
 
     public int getPtSorts() {
         return ptSorts;
@@ -19,6 +25,5 @@ public abstract class Mage extends Personnages {
     public void attaque( Personnages attaquer){
         random= (int) (Math.random()*2);
         listeSorts[random].lancerSorts(this ,attaquer);
-
     }
 }

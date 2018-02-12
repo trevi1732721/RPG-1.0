@@ -14,7 +14,7 @@ public class Feu extends Sorts {
     public void lancerSorts(Mage attaque, Personnages blessé){
         if(attaque.getPtSorts()>=5){
             attaque.setPtSorts(attaque.getPtSorts()-coût);
-            blessé.setNbVie(blessé.getNbVie()-5);
+            blessé.setNbVie(blessé.getNbVie()-(5+attaque.getArme().magie()));
             }
         }
     }
