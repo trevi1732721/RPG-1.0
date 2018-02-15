@@ -26,6 +26,7 @@ public class Main {
         //combat
         while(!mort){
             perso[0].attaque(perso[1]);
+            System.out.println("");
             fin = vérifier(perso[0],perso[1]);
             if(fin == 1 ||fin == 2 ){
                 mort=true;
@@ -37,7 +38,7 @@ public class Main {
             }
         }
         if(fin==1){
-            System.out.print("Le personnage de "+perso[attaque%2].getClass()+" à gagné!");
+            System.out.print("Le joueur "+perso[attaque%2].getNom()+" à gagné!");
         }if(fin==2){
             System.out.print("match null, il n'y a plus de magie!");
     }
@@ -86,7 +87,7 @@ public class Main {
         choix2 = false;
         Scanner sc = new Scanner(System.in);
         System.out.print("Quelle est l'arme de " + joueur.getNom() + "?\n");
-        if(joueur instanceof Contondant){
+        if(joueur instanceof Barbare){
             System.out.println("1- Masse\n2- Épée Lopurde\n3- Sceptre\n4- Masamune\n");
 
             choix = sc.nextInt();
@@ -102,7 +103,7 @@ public class Main {
                 default:
                     return new Masamune();
         }
-        }else if(joueur instanceof Tranchante){
+        }else if(joueur instanceof Paladin){
                 System.out.println("1- Épée\n2- Épée Lopurde\n3- Épée Magique\n4- Masamune\n");
                 choix = sc.nextInt();
                 switch (choix) {
